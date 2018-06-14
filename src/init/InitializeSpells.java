@@ -10,11 +10,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import objects.*;
+//import org.json.*;
 
-/**
- *
- * @author emmab
- */
 public class InitializeSpells {
 
     ArrayList<Spell> allSpells;
@@ -25,7 +22,7 @@ public class InitializeSpells {
     }
 
     //create a bunch of spell objects 
-    void initallSpells() {
+    void initialSpells() {
         for (int i = 0; i < numOfSpells; i++) {
             this.allSpells.add(new Spell("Spell " + i));
             this.allSpells.get(i).setClass(1);
@@ -195,15 +192,16 @@ public class InitializeSpells {
         currSpell.setDescription("");
     }
 
-    public void initallspellsListView(ListView<String> allspellslistView) {
-        initallSpells();
+    //combine both methods here
+    public void initialspellsListView(ListView<String> allspellslistView) {
+        initialSpells();
         for (int i = 0; i < numOfSpells; i++) {
             String spell = this.allSpells.get(i).getName();
             allspellslistView.getItems().add(spell);
         }
     }
 
-    public void initalldescrListView(ListView<String> allspellslistView) {
+    public void initialdescrListView(ListView<String> allspellslistView) {
         for (int i = 0; i < numOfSpells; i++) {
             String descr = this.allSpells.get(i).getDescr();
             allspellslistView.getItems().add(descr);
@@ -219,13 +217,10 @@ public class InitializeSpells {
             for (int j = 0; j < 9; j++) {
                 if (spellclass[j] == c) {
                     if (level == l) {
-                        //System.out.printf("%d\n", level);
-                        System.out.printf("%d\n", spellclass[j]);
                         listview.add(this.allSpells.get(i).getName());
                     }
                 }
             }
-            System.out.println();
         }
         return listview;
     }

@@ -1,24 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package objects;
 
-/**
- *
- * @author emmab
- */
 public class Spell {
     private int Level;
     private int[] Class = {10, 10, 10, 10, 10, 10, 10, 10, 10};
     private String Name;
     private String Description;
-    public Spell(){
-        Level = 0;
-        Name = "";
-        Description = "";
-    }
+
     public Spell(String name){
         Level = 0;
         Name = name;

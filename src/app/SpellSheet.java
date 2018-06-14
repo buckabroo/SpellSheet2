@@ -37,7 +37,7 @@ public class SpellSheet extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        ArrayList<Character> charArrayList = new ArrayList<Character>();
+        ArrayList<Character> charArrayList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             charArrayList.add(new Character("C" + i));
         }
@@ -63,8 +63,8 @@ public class SpellSheet extends Application {
         ListView<String> allspellslistView = new ListView<>();
         ListView<String> characterlistView = new ListView<>();
         ListView<String> alldescrslistView = new ListView<>();
-        init.initallspellsListView(allspellslistView);
-        init.initalldescrListView(alldescrslistView);
+        init.initialspellsListView(allspellslistView);
+        init.initialdescrListView(alldescrslistView);
 
         levelBox.setOnAction(event -> {
             int selectedLevel = (int) levelBox.getValue();
